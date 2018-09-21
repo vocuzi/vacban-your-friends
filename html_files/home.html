@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="theme-color" content="#16202d" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <link rel=icon href=/favicon.ico>
+    <title>VAC Ban Your Friends</title>
+    <style>
+      body {margin: 0; font-family: 'Open Sans', sans-serif; background: #04080c; transition: .3s all;}
+      #body {width: 100vw; height: 100vh; display: table-cell; vertical-align: middle;}
+      #container {max-width: 720px; margin-left: auto; margin-right: auto; margin-top: -10%; border-radius: 50px;}
+      #row {background: #16202d; display: block; color: #c7d5e0;}
+      #row #sub-row {padding: 20px;}
+      #row:first-child {background: green; color: #16202d; background: #d8b818;}
+      #row:first-child h1 {margin: 0; font-size: 1.5em;}
+      #row:first-child #sub-row {padding: 10px 20px; text-align: center;}
+      /* #row:first-child #sub-row > * {display: inline-block;} */
+      /* #row:first-child #sub-row > a {float: right; padding: 5px; text-decoration: none; color: black; font-size: .9em;} */
+      #description {margin: 5px auto 20px auto;}
+      #sub-row img {height: 50px;}
+      #description > * {display: block; text-align: center; margin: 0 auto; color: #d8b818;}
+      #description h2 {font-size: 1em; font-weight: normal; margin: 10px 0 5px 0;}
+      #form {}
+      #sub-form {}
+      #sub-form small {margin: 3px 0; font-size: .7em; display: block;}
+      #sub-form > input, select {}
+      input[name="url"] {width: 60%; background: #1b2838; line-height: 24px; color: #c7d5e0; outline: none; vertical-align: top; border: 1px solid #121c2e; padding: 5px 10px; font-size: 16px;}
+      input[name="url"]::placeholder {color: #c7d5e0;}
+      select[name="language"] {width: 15%; background: #1b2838; line-height: 24px; height: 36px; color: #c7d5e0; outline: none; vertical-align: top; border: 1px solid #121c2e; padding: 5px 10px; font-size: 16px;}
+      option {font-size: .8em;}
+      input[name="submit"] {border-radius: 0 5px 5px 0;vertical-align: top; width: 20%; border: 1px solid #121c2e; background-color: #d8b818; line-height: 24px; color: #16202d; padding: 5px 10px; font-size: 16px; outline-color: transparent; outline-style: none; cursor: pointer;}
+
+      #credits { text-align: center; margin-top: 30px; opacity: .3;}
+      #credits small {display: block; }
+      #credits a {color: #c7d5e0;}
+      @media screen and (max-width: 648px) {
+          input[type="url"] {width: 70%;}
+          select {width: 25% !important;}
+          input[type="submit"] {width: 50%; display: block; border-radius: 5px; margin: 5px auto;}
+          #description h2 {font-size: .9em;}
+      }
+      @media screen and (max-width: 568px) {
+          body {background: #1b2838;}
+          #container {margin-top: -20%;}
+          input[type="url"] {display: block; width: 94%;}
+          select {width: 48% !important; display: inline-block; margin: 7px auto;}
+          input[type="submit"] {width: 50%; display: inline-block; border-radius: 5px; margin: 7px auto;}
+          #description h2 {font-size: .9em;}
+          #row span {display: block; font-size: .8em;}
+          #row #sub-row {padding: 40px 20px;}
+          #description {margin-bottom: 30px;}
+          #credits {font-size: .8em;}
+      }
+
+    </style>
+  </head>
+  <body>
+    <div id="body">
+      <div id="container">
+        <div id="sub-container">
+          <div id="row">
+            <div id="sub-row">
+              <h1>VAC <span>(VAC BAN YOUR FRIENDS)</span></h1>
+            </div>
+          </div>
+          <div id="row">
+            <div id="sub-row">
+              <div id="description">
+                <img src="https://vacban.vocuzi.in/res/img/nyan.gif">
+                <h2>Add the VAC warning on the steam community page of your friends to trick them.</h2>
+                <a href="https://www.youtube.com/watch?v=m0O_aICqtEs" target="_blank">Video Tutorial</a>
+              </div>
+              <form id="form" method="post">
+                <div id="sub-form">
+                  <small>Paste the URL of a Steam profile</small>
+                  {% csrf_token %}
+                  <input type="url" name="url" placeholder="https://steamcommunity.com/id"/>
+                  <select name="language">
+                    <option value="en">English</option>
+                    <option value="ru">Русский</option>
+                    <option value="bg">български</option>
+                    <option value="cs">čeština</option>
+                    <option value="da">Dansk</option>
+                    <option value="nl">Nederlands</option>
+                    <option value="fi">Suomi</option>
+                    <option value="de">Deutsch</option>
+                    <option value="fr">Français</option>
+                    <option value="el">Ελληνικά</option>
+                    <option value="hu">Magyar</option>
+                    <option value="it">Italiano</option>
+                    <option value="japanese">日本語</option>
+                    <option value="koreana">한국어</option>
+                    <option value="norwegian">Norsk</option>
+                    <option value="polish">Polski</option>
+                    <option value="portuguese">Português</option>
+                    <option value="brazilian">Português-Brasil</option>
+                    <option value="romanian">Română</option>
+                    <option value="schinese">简体中文</option>
+                    <option value="spanish">Español</option>
+                    <option value="swedish">Svenska</option>
+                    <option value="tchinese">繁體中文</option>
+                    <option value="thai">ไทย</option>
+                    <option value="turkish">Türkçe</option>
+                    <option value="ukrainian">Українська</option>
+                  </select>
+                  <input type="submit" name="submit"/>
+                </div>
+              </form>
+              <div id="credits">
+                <small>Want to talk ? <a href="https://twitter.com/vocuzi" target="_blank">@vocuzi</a> - To keep this platform running <a href="">Donate</a>.</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-60752021-3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-60752021-3');
+</script>
+</html>
