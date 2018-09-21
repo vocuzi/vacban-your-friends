@@ -1,6 +1,5 @@
 # VacBan
 
-[![N|Solid](https://cldup.com/dTxpPi9lDf.thumb.png)](https://nodesource.com/products/nsolid)
 
 Vacban is a just-for-fun project to append fake vacban status to steam profiles and return screenshot.
   1. Input form field for steam profile URL.
